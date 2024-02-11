@@ -1,16 +1,26 @@
 ### 
 GET http://localhost:3000/shoppinglists/
 
-###
-GET http://localhost:3000/shoppinglists/65c846b189259a9489e59e26/
+### testing 1
+GET http://localhost:3000/shoppinglists/65c85244b26f4327ea320d80/
+
+### testing 1
+GET http://localhost:3000/shoppinglists/65c852deb26f4327ea320d8c/
 
 ###
-POST http://localhost:3000/shoppinglists/ 
+POST http://localhost:3000/shoppinglists/
 Content-Type: application/json
+
 {
-    "title": "Test list 1", "createdAt": "2024-02-10", "updatedAt": ":updatedAt"
+    "title": "Test list 1", "createdAt": "2024-02-10", "updatedAt": "2024-02-10"
 
 }
 
 ###
-PATCH http://localhost:3000/shoppinglists/65c846b189259a9489e59e26/
+PATCH http://localhost:3000/shoppinglists/65c85244b26f4327ea320d80/
+Content-Type: application/json
+
+{
+    "title": "Test list 2"
+
+}

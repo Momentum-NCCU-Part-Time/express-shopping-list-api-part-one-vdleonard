@@ -49,7 +49,6 @@ app.patch("/shoppinglists/:shoppinglistsId", (req, res) => {
     .then(shoppinglists => {
       if (shoppinglists) {
         shoppinglists.title = req.body.title || shoppinglists.title
-        shoppinglists.url = req.body.url || shoppinglists.url
         // save
         shoppinglists.save()
         res.status(200).json(shoppinglists)
