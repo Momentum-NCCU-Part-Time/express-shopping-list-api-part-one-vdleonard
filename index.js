@@ -4,7 +4,6 @@ const morgan = require("morgan")
 const mongoose = require("mongoose")
 
 const port = process.env.PORT
-
 // Daatbase connection
 mongoose.connect(process.env.DATABASE_URL)
 const db = mongoose.connection
@@ -50,7 +49,7 @@ app.patch("/shoppinglists/:shoppinglistsId", (req, res) => {
     .then(shoppinglists => {
       if (shoppinglists) {
         shoppinglists.title = req.body.title || shoppinglists.title
-        bookmark.url = req.body.url || shoppinglists.url
+        shoppinglists.url = req.body.url || shoppinglists.url
         // save
         shoppinglists.save()
         res.status(200).json(shoppinglists)
@@ -70,3 +69,5 @@ app.delete("/bookmarks/:bookmarkId", (req, res) => {
   //if it does not exsits return 404 not found
   //Add error catch?
 })
+
+app.listen(port, () => console.log(`Application is running on port ${port}`))

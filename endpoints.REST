@@ -1,2 +1,16 @@
 ### 
-GET http://localhost:3000/shoppinglists
+GET http://localhost:3000/shoppinglists/
+
+###
+GET http://localhost:3000/shoppinglists/65c846b189259a9489e59e26/
+
+###
+POST http://localhost:3000/shoppinglists/ 
+Content-Type: application/json
+{
+    "title": "Test list 1", "createdAt": "2024-02-10", "updatedAt": ":updatedAt"
+
+}
+
+###
+PATCH http://localhost:3000/shoppinglists/65c846b189259a9489e59e26/
