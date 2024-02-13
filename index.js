@@ -61,11 +61,21 @@ app.patch("/shoppinglists/:shoppinglistsId", (req, res) => {
 
 //Remove :: DELETE
 
-app.delete("/bookmarks/:bookmarkId", (req, res) => {
-  // use findbyid check if it exsits
-  // if it esits use removebyid to remove it
-  //use .save to save?
-  //if it does not exsits return 404 not found
+app.delete("/shoppinglists/:shoppinglistsId", (req, res) => {
+  ShoppingLists.findById(req.params.shoppinglistId)
+    .then(shoppinglists => {
+      // Check if list is found and remove
+      if (shoppinglists) {
+        shoppinglists.deleteOne(shoppinglists)
+        shoppinglist.save()
+        res.status(200).json()
+      } else {
+        //if it does not exsits return 404 not found
+        res.status(404).json({ message: "List not found" })
+      }
+    })
+    .catch(error => res.status(400).json({ message: "Bad request" }))
+
   //Add error catch?
 })
 

@@ -26,4 +26,4 @@ Content-Type: application/json
 }
 
 ###
-DELETE http://localhost:3000/shoppinglists/65c852deb26f4327ea320d8c/
+DELETE http://localhost:3000/shoppinglists/65c85244b26f4327ea320d80/
